@@ -60,7 +60,7 @@ jobs:
 
       - name: Upload Checkstyle Report
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: checkstyle-report
           path: target/checkstyle-result.xml
@@ -120,7 +120,7 @@ jobs:
 
       - name: Upload SpotBugs Report
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: spotbugs-report
           path: target/spotbugsXml.xml
@@ -147,7 +147,7 @@ jobs:
 
       - name: Upload Dependency Check Report
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dependency-check-report
           path: target/dependency-check-report.html
@@ -173,7 +173,7 @@ jobs:
 
       - name: Publish Test Results
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-results
           path: target/surefire-reports/
@@ -184,7 +184,7 @@ jobs:
 
       - name: Upload Coverage Report
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-report
           path: target/site/jacoco/
@@ -209,7 +209,7 @@ jobs:
         run: mvn clean package -DskipTests
 
       - name: Upload JAR Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: application-jar
           path: target/*.jar
@@ -241,7 +241,7 @@ jobs:
         run: docker save ${{ env.DOCKER_IMAGE_NAME }}:${{ github.sha }} -o /tmp/docker-image.tar
 
       - name: Upload Docker Image Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: docker-image
           path: /tmp/docker-image.tar
@@ -253,7 +253,7 @@ jobs:
     needs: docker-build
     steps:
       - name: Download Docker Image
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: docker-image
           path: /tmp
@@ -289,7 +289,7 @@ jobs:
     needs: image-scan
     steps:
       - name: Download Docker Image
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: docker-image
           path: /tmp
@@ -348,7 +348,7 @@ jobs:
     if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
     steps:
       - name: Download Docker Image
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: docker-image
           path: /tmp
