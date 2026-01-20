@@ -371,7 +371,6 @@ This project is created for educational purposes as part of the DevOps CI/CD ass
 ## Author
 
 Ayush Kesharwani
-Scaler DevOps Program
 
 ## Acknowledgments
 
