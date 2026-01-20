@@ -115,7 +115,7 @@ public class CacheEngine {
      */
     public Map<String, Object> getStats() {
         Map<String, Object> stats = new HashMap<>();
-        stats.put("totalEntries", cache.size());
+        stats.put("totalEntries", (long) cache.size());
         stats.put("failureRate", failureRate);
         stats.put("networkDelayMs", networkDelayMs);
         stats.put("defaultTtlSeconds", defaultTtlSeconds);
