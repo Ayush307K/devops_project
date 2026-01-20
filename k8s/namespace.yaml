@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cache-consistency
+  labels:
+    name: cache-consistency
+    environment: production
+    app: cache-consistency-checker

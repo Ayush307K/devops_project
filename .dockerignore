@@ -1,0 +1,31 @@
+# Git files
+.git
+.gitignore
+
+# CI/CD
+.github
+
+# IDE
+.idea
+.vscode
+*.iml
+
+# Build artifacts
+target/
+*.jar
+*.war
+
+# Test coverage
+*.log
+*.log.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Documentation
+*.md
+docs/
+
+# Kubernetes
+k8s/
