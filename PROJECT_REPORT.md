@@ -4,7 +4,6 @@
 **Project Name**: Cache Invalidation Consistency Checker
 **Author**: Ayush Kesharwani
 **Date**: January 2026
-**GitHub Repository**: [To be filled]
 
 ---
 
